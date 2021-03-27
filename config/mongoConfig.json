@@ -1,0 +1,6 @@
+  
+{
+    "urlForNew": "mongodb://localhost/newsDB",
+    "urlForAdmin": "mongodb://localhost/adminDB"
+
+}
