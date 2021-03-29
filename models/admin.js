@@ -1,12 +1,15 @@
 const mongoose = require('./mongoForAdmin');
 //create collection with schema
+const Schema = mongoose.Schema
 
-const Admin = new mongoose.Schema(
-    {
-     name: String,
-     password: String,
-     email: String,
-    }
-);
+const newsModel = new Schema({
+    title: {type:String},
+    description: {type:String},
+    url: {type:String},
+    urlToImage: {type:String},
+    publishedAt: {type:String},
+    insertTime: {type:Number}
+})
 
-module.exports = mongoose.model('Admin',Admin);
+
+module.exports = mongoose.model('newslist', newsModel, 'news_list')
