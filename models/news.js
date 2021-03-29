@@ -1,14 +1,16 @@
 const mongoose = require('./mongoForNews');
 //create collection with schema
 
-const New = new mongoose.Schema(
-    {
-     title: String,
-     des: String,
-     url: String,
-     imageURL:String,
-     publishedAt: Date
-    }
-);
+const Schema = mongoose.Schema
 
-module.exports = mongoose.model('New',New);
+const newsModel = new Schema({
+    title: {type:String},
+    description: {type:String},
+    url: {type:String},
+    urlToImage: {type:String},
+    publishedAt: {type:String},
+    insertTime: {type:Number}
+})
+
+
+module.exports = mongoose.model('newslist', newsModel, 'news_list')
